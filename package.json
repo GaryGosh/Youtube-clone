@@ -4,11 +4,14 @@
   "description": "first try",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "backend": "nodemon index.js"
   },
   "author": "Neeraj",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
     "express": "^4.17.1",
     "mongoose": "^5.4.20"
   }
