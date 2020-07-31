@@ -3,16 +3,22 @@
   "version": "1.0.0",
   "description": "first try",
   "main": "index.js",
+  "engine": {
+    "node": "12.17.0",
+    "npm": "6.14.4"
+  },
   "scripts": {
-    "start": "node index.js",
-    "backend": "nodemon index.js"
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js"
   },
   "author": "Neeraj",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.4.20"
   }
 }
