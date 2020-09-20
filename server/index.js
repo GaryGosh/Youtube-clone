@@ -9,6 +9,12 @@ const config = require('./config/key')
 const { User } = require('./model/user');
 const { auth } = require('./middleware/auth');
 
+app.use(express.static('client/build'));
+
+router.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 
 mongoose.connect(config.mongoURI, 
 {useNewUrlParser: true}).then(() => console.log('DB connected'))
@@ -26,7 +32,7 @@ app.get('/', (req, res) => {
     res.json({'Hello': 'I am happy to deploy my application'})
 })
 
-app.get('/api/user/auth', auth, (req, res) => {
+app.get('/api/users/auth', auth, (req, res) => {
     res.status(200).json({
         _id: req.id,
         isAuth: true,
@@ -51,7 +57,7 @@ app.post('/api/users/register', (req,res) => {
 })
 
 
-app.post('/api/user/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
     //find email
 
     User.findOne({ email: req.body.email }, (err, user) => {
