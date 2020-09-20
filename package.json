@@ -12,6 +12,7 @@
     "backend": "nodemon server/index.js",
     "heroku-postbuild": "npm run build",
     "frontend": "npm run start --prefix client",
+    "build": "react-scripts build",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
   "author": "Neeraj",
